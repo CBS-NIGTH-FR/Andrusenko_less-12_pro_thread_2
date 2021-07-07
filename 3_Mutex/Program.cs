@@ -6,7 +6,7 @@ namespace _3_Mutex
  //   именованный Mutex).
     class Program
     {
-        static Mutex mutex = new Mutex(false, "MyMutex:VGHFVCICG76AD45BAUNCNGCZYUFCNUYCL"); //ОДИН ТУРНИКЕТ НА ВСЕ ПРОЦЕССЫ
+        static Mutex mutex = new Mutex(false, "MyMutex:VGHFVCICG76AD45BAUNCNGCZYUFCNUYCL"); 
 
         static void Main()
         {
@@ -26,13 +26,13 @@ namespace _3_Mutex
 
         static void Function()
         {
-            mutex.WaitOne();//щелк турникет, зашли на мостик . другой поток не может запустится, пока не завершится этот
+            mutex.WaitOne();
 
             Console.WriteLine("Поток {0} зашел в защищенную область.", Thread.CurrentThread.Name);
-            Thread.Sleep(2000); //ТУТ МОЖЕТ БЫТЬ ДОСТУП К РЕСУРСУ, С КОТОРЫМ МОЖЕТ ОДНОВРЕМЕННО РАБОТАТЬ ТОЛЬКО ОДИН ПОТОК  ОДНОЙ ПОГРАММЫ !!!
+            Thread.Sleep(2000); 
             Console.WriteLine("Поток {0}  покинул защищенную область.\n", Thread.CurrentThread.Name);
 
-            mutex.ReleaseMutex(); //щелк, освободили ресурс
+            mutex.ReleaseMutex(); //освободили ресурс
         }
     }
 }
