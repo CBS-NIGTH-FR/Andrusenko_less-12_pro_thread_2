@@ -26,17 +26,17 @@ namespace _2_event
 
         static void Main()
         {
-            Thread thread = new Thread(Function) { Name = "1" }; // 1-й ПОТОК.
+            Thread thread = new Thread(Function) { Name = "1" }; 
             thread.Start();
 
             Console.WriteLine("Приостановка выполнения первичного потока.");
-            auto.WaitOne(); // засыпание
+            auto.WaitOne(); 
 
             Console.WriteLine("Первичный поток возобновил работу.");
 
             //auto.Reset();   не надо выключать вручную
 
-            thread = new Thread(Function) { Name = "2" }; // 2-й ПОТОК./
+            thread = new Thread(Function) { Name = "2" }; 
             thread.Start();
 
             Console.WriteLine("Приостановка выполнения первичного потока.");
@@ -44,7 +44,6 @@ namespace _2_event
 
             Console.WriteLine("Первичный поток возобновил и завершил работу.");
 
-            // Delay
             Console.ReadKey();
         }
     }
