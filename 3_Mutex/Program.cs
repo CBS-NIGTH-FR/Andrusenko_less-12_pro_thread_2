@@ -33,6 +33,6 @@ namespace _3_Mutex
             Console.WriteLine("Поток {0}  покинул защищенную область.\n", Thread.CurrentThread.Name);
 
             mutex.ReleaseMutex(); //освободили ресурс
-        }
+        } 
     }
 }
